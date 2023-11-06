@@ -1,2 +1,2 @@
-# coolkids
-the cool kids algorithm
+# maat
+the weighted heart algorithm
