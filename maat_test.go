@@ -133,3 +133,25 @@ func TestCalculateLambda4(t *testing.T) {
 		t.Fatalf("expected lambda == 2; outcome %d;", output)
 	}
 }
+
+func Benchmark(b *testing.B) {
+	config := &Config{
+		Alpha:        1500,
+		LambdaLevels: 3,
+		Omega:        3000,
+	}
+	for n := 0; n < b.N; n++ {
+		Judge(&Body{
+			Weigth:  2001,
+			Pointer: &myheartisabattleground,
+		}, config)
+		Judge(&Body{
+			Weigth:  3000,
+			Pointer: &itstearingupmyheart,
+		}, config)
+		Judge(&Body{
+			Weigth:  1400,
+			Pointer: &myheartwillgoonandon,
+		}, config)
+	}
+}
